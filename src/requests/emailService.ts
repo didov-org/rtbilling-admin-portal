@@ -288,7 +288,7 @@ export interface TSMTPApiCredential {
   smtpPort?: number
   username?: string
   password?: string
-  authType?: 'plain' | 'cram-md5' | 'xoauth2' | 'none'
+  authType?: 'plain' | 'login' | 'cram-md5' | 'xoauth2' | 'none'
   oauthToken?: string
   useTLS?: boolean
   skipTLSVerify?: boolean

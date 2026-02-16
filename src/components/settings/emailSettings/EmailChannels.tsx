@@ -14,7 +14,7 @@ import { uiConfigStore } from '@/stores'
 const { Text } = Typography
 
 type ChannelType = 'sendgrid' | 'smtp'
-type AuthType = 'plain' | 'cram-md5' | 'xoauth2' | 'none'
+type AuthType = 'plain' | 'login' | 'cram-md5' | 'xoauth2' | 'none'
 
 interface EmailChannelsProps {
   onDirtyChange?: (isDirty: boolean) => void
@@ -182,7 +182,7 @@ const EmailChannels = ({ onDirtyChange }: EmailChannelsProps) => {
           authType: authType
         }
         
-        if (authType === 'plain' || authType === 'cram-md5') {
+        if (authType === 'plain' || authType === 'login' || authType === 'cram-md5') {
           if (!username.trim()) {
             message.error('Please enter the username')
             setSaving(false)
@@ -305,6 +305,7 @@ const EmailChannels = ({ onDirtyChange }: EmailChannelsProps) => {
   const renderAuthFields = () => {
     switch (authType) {
       case 'plain':
+      case 'login':
       case 'cram-md5':
         return (
           <>
@@ -527,12 +528,13 @@ const EmailChannels = ({ onDirtyChange }: EmailChannelsProps) => {
               style={{ width: '100%' }}
             >
               <Select.Option value="plain">PLAIN (Plain text authentication)</Select.Option>
+              <Select.Option value="login">LOGIN (LOGIN authentication)</Select.Option>
               <Select.Option value="cram-md5">CRAM-MD5 (Encrypted authentication)</Select.Option>
               <Select.Option value="xoauth2">XOAUTH2 (OAuth2 authentication)</Select.Option>
               <Select.Option value="none">NONE (No authentication)</Select.Option>
             </Select>
             <Text type="secondary" className="field-hint">
-              Available values: "plain" / "cram-md5" / "xoauth2" / "none"
+              Available values: "plain" / "login" / "cram-md5" / "xoauth2" / "none"
             </Text>
           </div>
 
