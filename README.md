@@ -1,10 +1,14 @@
-# Unibee-admin-portal
+# RTBilling Admin Portal
 
-This project is a single-page WEB application which is Front-end of UniBee billing admin management system.
+This project is a fork of [UniBee Admin Portal](https://github.com/UniBee-Billing/unibee-admin-portal), a single-page web application serving as the front-end for the UniBee billing admin management system. This fork has been modified since February 2025.
+
+## Changes from upstream
+
+This fork includes modifications to the original UniBee Admin Portal. Key changes include enhancements to subscription usage metrics, metering usage actions, and addon plan calculations. For a full list of changes, see the [commit history](https://github.com/bdidov/rtbilling-admin-portal/commits/main).
 
 ## Prerequisites
 
-- Nodejs 18+
+- Node.js 18+
 
 ## Getting started
 
@@ -12,10 +16,10 @@ Clone this repository and install the dependencies.
 
 ```shell
 # Clone this repository
-git clone https://github.com/UniBee-Billing/unibee-admin-portal
+git clone https://github.com/bdidov/rtbilling-admin-portal
 
 # Install dependencies
-cd unibee-admin-portal
+cd rtbilling-admin-portal
 yarn install
 ```
 
@@ -54,10 +58,12 @@ The admin portal also supports building the application using Docker, run the fo
 docker build -t <tag> .
 ```
 
-# Development
+## Development
 
-Use `yarn add <package>` to add a new dependency, don't use `npm install <package>`. Create your own local branch for development, then create PR to merge into develop/v1.2.3 branch(v1.2.3 is the latest release branch).
+Use `yarn add <package>` to add a new dependency, don't use `npm install <package>`. Create your own local branch for development, then create a PR to merge into the develop branch.
 
 ## License
 
-AGPLv3.
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE) (AGPLv3), the same license as the original [UniBee Admin Portal](https://github.com/UniBee-Billing/unibee-admin-portal).
+
+This is a modified version of the original program. In accordance with AGPLv3 Section 5, this modified version is distributed under the same license terms. See the [LICENSE](LICENSE) file for full details.
